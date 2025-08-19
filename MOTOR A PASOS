@@ -1,1 +1,39 @@
+/* En este codigo se logra mover un solo motor a pasos
+utilizando el driver a4988 para asi despues lograr usar
+el shield adaptable para arduino
+*/
+const int steppin =10; //este pin va en el pin del STEP del driver 
+const int dirpin =12; //este pin va en el pin del dirpin del driver
+const int tiempo =5; //valor del tiempo 5 milisegundos, 5msec
 
+void setup() 
+{
+  pinMode(steppin,OUTPUT);
+  pinMode(dirpin,OUTPUT);
+}
+
+void loop()
+{
+  //este caso es para ir en un sentido
+  digitalWrite(dirpin,HIGH);
+
+  for (int x =0; x < 200, x++}
+  {
+    digitalWrite(steppin, HIGH);
+    delay(tiempo);
+    digitalWrite(steppin, LOW);
+    delay(tiempo);
+  }
+  //mismo proceso pero para setido contrario
+  //este caso es para ir en un sentido
+  digitalWrite(dirpin,LOW);
+
+  for (int x =0; x < 400, x++} 
+  //en este caso en teoria giraria 2 vueltas en un sentido
+  {
+    digitalWrite(steppin, HIGH);
+    delay(tiempo);
+    digitalWrite(steppin, LOW);
+    delay(tiempo);
+  }
+}
